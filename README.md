@@ -53,5 +53,4 @@ This script is released under MIT license.
 However, if you use this script and you find some further improvements
 and you want to share that with me, feel free to drop me a line. I'll be glad to hear that.
 
-Fabiano 'elbryan' Francesconi
-[blog.encomiabile.it](http://blog.encomiabile.it)
+[Fabiano 'elbryan' Francesconi](http://blog.encomiabile.it)
