@@ -1,16 +1,19 @@
+#!/usr/bin/env python
+
 # -*- coding: utf-8 -*-
+
+import codecs
+import re
+import argparse
+import shutil
+import os
+import sys
 
 __authors__     = ["Fabiano Francesconi <fabiano dot francesconi at gmail dot com>"]
 __license__     =  "MIT"
 __copyright__   =  "Copyright 2012, Fabiano Francesconi"
 __status__      =  "Development"
 __version__     =  "0.1"
-
-import codecs
-import re
-import argparse
-import shutil
-import os, sys
 
 def parse_file(filepath, rolespath, includepath, suppress_backup):
 	f = codecs.open(filepath, encoding="utf-8")
