@@ -21,24 +21,30 @@ def parse_file(filepath, rolespath, includepath, suppress_backup):
 	for line in f:
 		role = parse_line(line)
 		if role:
+			# If we hit a new role, dump the previous one
 			if (currentrole != None):
-				sys.stdout.write("Dumping role '{}'\n".format(currentrole))
-				fname = rolespath + currentrole
-				dump_buffer(rolebuffer, fname)
+				dump_role(rolebuffer, rolespath, currentrole)
 
-				# Add the include line in the main policy file
-				includemsg = "include <" + includepath + currentrole + ">\n"
-				mainbuffer += includemsg
+				# Add the include line
+				mainbuffer += get_include_line(includepath, currentrole)
+
 			currentrole = role
 			rolebuffer = ""
 		else:
 			if (currentrole == None):
 				mainbuffer += line
 		rolebuffer += line
+
+	# When the file is over it means that we have the last role to dump
+	dump_role(rolebuffer, rolespath, currentrole)
+	# Add the include line
+	mainbuffer += get_include_line(includepath, currentrole)
 	
+	# Generate the backup file
 	if not suppress_backup:
 		create_backup(filepath)
 
+	# Dump the new policy file
 	dump_buffer(mainbuffer, filepath)
 
 def parse_line(line):
@@ -51,6 +57,15 @@ def dump_buffer(rolebuffer, filename):
 	f = codecs.open(filename, "w", encoding="utf-8")
 	f.write(rolebuffer)
 	f.close()
+
+def dump_role(rolebuffer, rolespath, rolename):
+	sys.stdout.write("Dumping role '{}'\n".format(rolename))
+	fname = rolespath + rolename
+	dump_buffer(rolebuffer, fname)
+
+def get_include_line(includepath, rolename):
+	include_line = "include <" + includepath + rolename + ">\n"
+	return include_line
 
 def create_backup(filename):
 	shutil.copyfile(filename, filename + ".bck")
