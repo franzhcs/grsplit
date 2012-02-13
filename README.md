@@ -12,24 +12,24 @@ GRSplit, a small policy splitter for Grsecurity RBAC policies
 
 ### Usage
 
-  usage: grsplit.py [-h] [-d DIRECTORY] [-i INCLUDE_PATH] [-b] [-v] policy
+	usage: grsplit.py [-h] [-d DIRECTORY] [-i INCLUDE_PATH] [-b] [-v] policy
 
-  a policy splitter for Grsecurity RBAC policies.
+	a policy splitter for Grsecurity RBAC policies.
 
-  positional arguments:
-    policy                policy file to be modified
+	positional arguments:
+	  policy                policy file to be modified
 
-  optional arguments:
-    -h, --help            show this help message and exit
-    -d DIRECTORY, --directory DIRECTORY
-                          use existing DIRECTORY as the directory to write files
-                          in (default: "/etc/grsec/roles")
-    -i INCLUDE_PATH, --include-path INCLUDE_PATH
-                          path used in main policy file when including external
-                          policy files. (default: "/etc/grsec/roles")
-    -b, --suppress-backup
-                          suppress backup file creation. (default: false)
-    -v, --version         show program's version number and exit	
+	optional arguments:
+	  -h, --help            show this help message and exit
+	  -d DIRECTORY, --directory DIRECTORY
+	                  use existing DIRECTORY as the directory to write files
+	                  in (default: "/etc/grsec/roles")
+	  -i INCLUDE_PATH, --include-path INCLUDE_PATH
+	                  path used in main policy file when including external
+	                  policy files. (default: "/etc/grsec/roles")
+	  -b, --suppress-backup
+	                  suppress backup file creation. (default: false)
+	  -v, --version         show program's version number and exit	
 
 Please, be aware that this software has not been extensively tested. It is
 likely to contain bugs, therefore it's adviced to make a hard copy of the policy
