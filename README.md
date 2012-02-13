@@ -29,10 +29,29 @@ GRSplit, a small policy splitter for Grsecurity RBAC policies
 	                  policy files. (default: "/etc/grsec/roles")
 	  -b, --suppress-backup
 	                  suppress backup file creation. (default: false)
-	  -v, --version         show program's version number and exit	
+	  -v, --version   show program's version number and exit	
+
+### Description
+
+Grsecurity RBAC policy is usually one single file containing information of every role
+associated with the system. If you are like me, it's pretty obnoxious to find
+entries linked to specific roles mixed up with others.
+
+This script simply takes the single policy file, recognises where each role
+has been defined and created a specific file with the role name. Such file is then
+included in the main policy file.
+
+### Warning
 
 Please, be aware that this software has not been extensively tested. It is
 likely to contain bugs, therefore it's adviced to make a hard copy of the policy
 file before relying on this script.
 
-Fabiano Francesconi
+### License
+
+This script is released under MIT license.
+However, if you use this script and you find some further improvements
+and you want to share that with me, feel free to drop me a line. I'll be glad to hear that.
+
+Fabiano 'elbryan' Francesconi
+[blog.encomiabile.it](http://blog.encomiabile.it)
