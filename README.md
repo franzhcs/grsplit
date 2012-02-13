@@ -1,4 +1,4 @@
-GRAN
+GRSplit
 ----
 
 GRSplit, a small policy splitter for Grsecurity RBAC policies
@@ -22,14 +22,14 @@ GRSplit, a small policy splitter for Grsecurity RBAC policies
 	optional arguments:
 	  -h, --help            show this help message and exit
 	  -d DIRECTORY, --directory DIRECTORY
-	                  use existing DIRECTORY as the directory to write files
-	                  in (default: "/etc/grsec/roles")
+	                        use existing DIRECTORY as the directory to write files
+	                        in (default: "/etc/grsec/roles")
 	  -i INCLUDE_PATH, --include-path INCLUDE_PATH
-	                  path used in main policy file when including external
-	                  policy files. (default: "/etc/grsec/roles")
+	                        path used in main policy file when including external
+	                        policy files. (default: "/etc/grsec/roles")
 	  -b, --suppress-backup
-	                  suppress backup file creation. (default: false)
-	  -v, --version   show program's version number and exit	
+	                        suppress backup file creation. (default: false)
+	  -v, --version         show program's version number and exit	
 
 ### Description
 
